@@ -1,0 +1,22 @@
+diff_drive_controller:
+  type: "diff_drive_controller/DiffDriveController"
+  left_wheel: ['left_wheel_joint']  # Replace with actual joint names
+  right_wheel: ['right_wheel_joint']
+  pose_covariance: 0.001
+  twist_covariance: 0.001
+  wheel_separation: 0.20  # Adjust based on your robot's measurements
+  wheel_radius: 0.05      # Adjust based on your wheel size
+  wheel_separation_multiplier: 1.0
+  left_wheel_radius_multiplier: 1.0
+  right_wheel_radius_multiplier: 1.0
+  publish_rate: 50.0
+  cmd_vel_timeout: 0.25
+  base_frame_id: base_link  # Verify your base link name
+  
+  # PID parameters (adjust as needed)
+  linear:
+    x:
+      pid: {p: 100.0, i: 5.0, d: 0.0}
+  angular:
+    z:
+      pid: {p: 100.0, i: 5.0, d: 0.0}
