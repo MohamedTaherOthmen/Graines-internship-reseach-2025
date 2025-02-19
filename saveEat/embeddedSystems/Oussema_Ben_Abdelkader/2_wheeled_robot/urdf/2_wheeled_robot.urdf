@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="2_wheeled_robot">
+
+<!-- Chassis-->
+
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-0.000107321492185064 2.22044604925031E-16 -0.0250251645361782" rpy="0 0 0" />
+      <mass value="2.01249992463912" />
+      <inertia ixx="0.00380129968803899" ixy="-1.1019976979327E-19" ixz="-2.77996434429272E-06"
+               iyy="0.0129717573977099" iyz="1.36171170626258E-07" izz="0.0159347976944742" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://2_wheeled_robot/meshes/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://2_wheeled_robot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+<!-- Left Wheel -->
+
+  <link name="left_Link">
+    <inertial>
+      <origin xyz="-1.1102E-16 -0.01992 0" rpy="0 0 0" />
+      <mass value="0.18421" />
+      <inertia ixx="9.1355E-05" ixy="8.7932E-21" ixz="-3.5465E-39"
+               iyy="0.00013888" iyz="-1.2533E-23" izz="9.1355E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://2_wheeled_robot/meshes/left_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.25098 0.25098 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://2_wheeled_robot/meshes/left_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="left_joint" type="continuous">
+    <origin xyz="-0.055 0.125 -0.038293" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="left_Link" />
+    <axis xyz="0 -1 0" />
+  </joint>
+
+<!-- Right Wheel -->
+
+  <link name="right_Link">
+    <inertial>
+      <origin xyz="0 0.01992 1.1102E-16" rpy="0 0 0" />
+      <mass value="0.18421" />
+      <inertia ixx="9.1355E-05" ixy="-4.1346E-21" ixz="3.9164E-21"
+               iyy="0.00013888" iyz="3.1612E-21" izz="9.1355E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://2_wheeled_robot/meshes/right_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.25098 0.25098 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://2_wheeled_robot/meshes/right_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="right_joint" type="continuous">
+    <origin xyz="-0.055 -0.125 -0.0375" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="right_Link" />
+    <axis xyz="0 1 0" />
+  </joint>
+
+<!-- Caster Wheel -->
+
+  <link name="caster_wheel_Link">
+    <inertial>
+      <origin xyz="-1.1102E-16 0.018174 -4.4409E-16" rpy="0 0 0" />
+      <mass value="0.0053846" />
+      <inertia ixx="2.798E-07" ixy="7.4942E-26" ixz="-7.3509E-23"
+               iyy="3.6648E-07" iyz="8.5385E-25" izz="2.798E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://2_wheeled_robot/meshes/caster_wheel_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://2_wheeled_robot/meshes/caster_wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="caster_wheel_joint" type="fixed">
+    <origin xyz="0.079893 -0.0051974 -0.0783" rpy="1.5708 0 0" />
+    <parent link="base_link" />
+    <child link="caster_wheel_Link" />
+    <axis xyz="0 1 0" />
+  </joint>
+
+<!-- Lidar -->
+
+  <link name="lidar_link">
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="0.05" radius="0.05"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.05" radius="0.05"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="lidar_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_link"/>
+    <origin xyz="0 0 0.02" rpy="0 0 0"/>
+  </joint>
+
+
+<!-- Lidar Gazebo Plugin -->
+  <gazebo reference="lidar_link">
+    <sensor type="ray" name="lidar">
+      <pose>0 0 0.02 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>40</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1</resolution>
+            <min_angle>-3.14159</min_angle> 
+            <max_angle>3.14159</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>12.0</max>
+          <resolution>0.03</resolution>
+        </range>
+      </ray>
+      <plugin name="lidar_controller" filename="libgazebo_ros_laser.so">
+        <topicName>/scan</topicName>
+        <frameName>lidar_link</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+<!-- Differential Drive Gazebo Plugin -->
+  
+  <gazebo>
+    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <updateRate>50</updateRate>
+      <leftJoint>left_joint</leftJoint>
+      <rightJoint>right_joint</rightJoint>
+      <wheelSeparation>0.5380</wheelSeparation>
+      <wheelDiameter>0.2410</wheelDiameter>
+      <wheelAcceleration>1.0</wheelAcceleration>
+      <wheelTorque>20</wheelTorque>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <robotBaseFrame>base_link</robotBaseFrame>
+      <odometrySource>1</odometrySource>
+      <publishWheelTF>true</publishWheelTF>
+      <publishOdom>true</publishOdom>
+      <publishWheelJointState>true</publishWheelJointState>
+      <legacyMode>false</legacyMode>
+    </plugin>
+  </gazebo>
+
+
+
+</robot>
