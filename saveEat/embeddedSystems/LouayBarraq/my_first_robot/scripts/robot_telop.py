@@ -125,6 +125,7 @@ CTRL+C pour quitter
 if __name__ == '__main__':
     try:
         node = TeleopNode()
+        node.reset_robot_position()
         node.run()
     except rospy.ROSInterruptException:
         pass
