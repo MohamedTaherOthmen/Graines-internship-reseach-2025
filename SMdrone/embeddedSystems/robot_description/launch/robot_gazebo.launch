@@ -1,0 +1,17 @@
+<launch>
+  <!-- Load the URDF into the ROS parameter server -->
+  <param name="robot_description" command="cat $(find robot_description)/urdf/robot.urdf" />
+
+  <!-- Start the robot_state_publisher to publish TFs -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen" />
+
+  <!-- Start the Gazebo simulation -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find gazebo_ros)/worlds/empty.world" />
+  </include>
+
+  <!-- Spawn the robot model in Gazebo -->
+  <node name="spawn_robot" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot" />
+
+</launch>
+
