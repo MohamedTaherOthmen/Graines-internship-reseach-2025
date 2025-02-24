@@ -1,0 +1,23 @@
+skid_steer_drive_controller:
+    type: "skid_steer_drive_controller/SkidSteerDriveController"
+    publish_rate: 50  # Fréquence de mise à jour du contrôleur (Hz)
+
+    # Définition des roues motrices (toutes les roues sont motrices)
+    left_wheel: ['wheelAvG', 'wheelArG']
+    right_wheel: ['wheelAvD', 'wheelArd']
+    
+    # Ajout de tous les joints des roues pour assurer une bonne prise en charge
+    wheel_joints: ['wheelAvG', 'wheelArG', 'wheelAvD', 'wheelArd']
+
+    # Paramètres physiques du robot
+    #wheel_separation: 0.4  # Distance entre les roues gauche et droite (mètres)
+   # wheel_radius: 0.1      # Rayon des roues (mètres)
+
+    # Paramètres pour la cinématique
+    wheel_separation_multiplier: 1.0  # Facteur d'échelle de la distance entre les roues
+    wheel_radius_multiplier: 1.0      # Facteur d'échelle du rayon des roues
+
+    # Commande et odométrie
+    cmd_vel_timeout: 0.5
+    enable_odom_tf: true
+    base_frame_id: base_link

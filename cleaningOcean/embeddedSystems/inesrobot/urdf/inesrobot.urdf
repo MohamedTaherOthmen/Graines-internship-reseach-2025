@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="inesrobot">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0 -6.93889390390723E-18 -0.063659112489263"
+        rpy="0 0 0" />
+      <mass
+        value="11.848166164294" />
+      <inertia
+        ixx="0.10903300626607"
+        ixy="-5.77041195316992E-18"
+        ixz="-1.55703327600684E-18"
+        iyy="0.108073882786479"
+        iyz="2.84265142059592E-19"
+        izz="0.185245611139067" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inesrobot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inesrobot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="WheelAvD_Link">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 0.0190056956240241 1.38777878078145E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.69103336820671" />
+      <inertia
+        ixx="0.00108828555880618"
+        ixy="-1.81141999605506E-19"
+        ixz="1.9840762320426E-19"
+        iyy="0.00201013510282896"
+        iyz="1.88890663860063E-21"
+        izz="0.00108828555880618" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inesrobot/meshes/WheelAvD_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inesrobot/meshes/WheelAvD_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheelAvD"
+    type="continuous">
+    <origin
+      xyz="0.127 -0.2455 -0.1016"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="WheelAvD_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="WheelAvG_Link">
+    <inertial>
+      <origin
+        xyz="0 -0.0190056956240241 -2.08166817117217E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.691033368206711" />
+      <inertia
+        ixx="0.00108828555880618"
+        ixy="-1.03840485052092E-19"
+        ixz="1.41247790583572E-19"
+        iyy="0.00201013510282896"
+        iyz="-7.96251205855057E-20"
+        izz="0.00108828555880618" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inesrobot/meshes/WheelAvG_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inesrobot/meshes/WheelAvG_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheelAvG"
+    type="continuous">
+    <origin
+      xyz="0.127 0.2455 -0.1016"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="WheelAvG_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="WheelArG_Link">
+    <inertial>
+      <origin
+        xyz="0 -0.0190056956240242 6.93889390390723E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.691033368206711" />
+      <inertia
+        ixx="0.00108828555880618"
+        ixy="-2.4203790135328E-19"
+        ixz="1.23228288769189E-19"
+        iyy="0.00201013510282896"
+        iyz="-2.90689102975137E-19"
+        izz="0.00108828555880618" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inesrobot/meshes/WheelArG_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inesrobot/meshes/WheelArG_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheelArG"
+    type="continuous">
+    <origin
+      xyz="-0.127 0.2455 -0.1016"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="WheelArG_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="wheelArD_Link">
+    <inertial>
+      <origin
+        xyz="0 0.0190056956240241 2.08166817117217E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.691033368206711" />
+      <inertia
+        ixx="0.00108828555880618"
+        ixy="-1.75132610602595E-19"
+        ixz="-8.15212491957661E-20"
+        iyy="0.00201013510282897"
+        iyz="9.08678970941803E-21"
+        izz="0.00108828555880618" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inesrobot/meshes/wheelArD_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inesrobot/meshes/wheelArD_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheelArd"
+    type="continuous">
+    <origin
+      xyz="-0.127 -0.2455 -0.1016"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheelArD_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+
+ <!-- Ajout du RPLIDAR -->
+<link name="rplidar_link">
+  <inertial>
+    <mass value="0.1" /> <!-- Masse du LiDAR -->
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01" />
+  </inertial>
+
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <cylinder length="0.05" radius="0.05" /> <!-- Forme du RPLIDAR -->
+    </geometry>
+    <material name="blue">
+      <color rgba="0 0 1 1" />
+    </material>
+  </visual>
+
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <cylinder length="0.05" radius="0.05" />
+    </geometry>
+  </collision>
+</link>
+
+<!-- Joint pour connecter le RPLIDAR au base_link -->
+<joint name="rplidar_joint" type="fixed">
+  <parent link="base_link" />
+  <child link="rplidar_link" />
+  <origin xyz="0 0 0.063659112489263" rpy="0 0 0" /> <!-- Position du LiDAR -->
+</joint>
+
+<!-- Configuration du RPLIDAR dans Gazebo -->
+<gazebo reference="rplidar_link">
+  <sensor name="rplidar_sensor" type="ray">
+    <always_on>true</always_on>
+    <update_rate>10</update_rate> <!-- Fréquence de mise à jour du LiDAR -->
+    <visualize>true</visualize> <!-- Activer la visualisation dans Gazebo -->
+    <ray>
+      <scan>
+        <horizontal>
+          <samples>360</samples> <!-- Nombre de points de scan (360 pour un RPLIDAR A1) -->
+          <resolution>1</resolution>
+          <min_angle>-3.14159</min_angle> <!-- -180 degrés en radians -->
+          <max_angle>3.14159</max_angle> <!-- 180 degrés en radians -->
+        </horizontal>
+      </scan>
+      <range>
+        <min>0.15</min> <!-- Distance minimale en mètres -->
+        <max>12.0</max> <!-- Distance maximale en mètres -->
+        <resolution>0.01</resolution> <!-- Résolution en mètres -->
+      </range>
+    </ray>
+    <plugin name="gazebo_ros_rplidar_controller" filename="libgazebo_ros_laser.so">
+      <topicName>/scan</topicName> <!-- Topic ROS pour publier les données du LiDAR -->
+      <frameName>rplidar_link</frameName> <!-- Frame du LiDAR -->
+    </plugin>
+  </sensor>
+</gazebo>
+
+
+
+<gazebo>
+  <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+    <updateRate>100.0</updateRate>
+    <robotNamespace>/</robotNamespace>
+    <leftFrontJoint>wheelAvG</leftFrontJoint>
+    <rightFrontJoint>wheelAvD</rightFrontJoint>
+    <leftRearJoint>wheelArG</leftRearJoint>
+    <rightRearJoint>wheelArd</rightRearJoint>
+   <!-- <wheelSeparation>0.4</wheelSeparation>
+    <wheelDiameter>0.215</wheelDiameter> -->
+    <robotBaseFrame>base_link</robotBaseFrame>
+    <torque>20</torque>
+    <topicName>cmd_vel</topicName>
+    <broadcastTF>false</broadcastTF>
+  </plugin>
+</gazebo>
+
+
+
+</robot>

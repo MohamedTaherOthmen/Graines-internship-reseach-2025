@@ -1,0 +1,24 @@
+<launch>
+  <!-- Charger le modèle URDF dans le paramètre robot_description -->
+  <param name="robot_description" textfile="$(find inesrobot)/urdf/inesrobot.urdf" />
+
+  <!-- Démarrer Gazebo -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find inesrobot/worlds/empty.world"/>
+  </include>
+
+  <!-- Spawner le robot dans Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model cleanrobot" />
+
+  <!-- Charger les contrôleurs -->
+  <rosparam file="$(find inesrobot)/config/controller.yaml" command="load" />
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+        output="screen" args="joint_state_controller my_joint_position_controller" />
+
+  <!-- Publier les états des joints -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+<!-- Lancer le LiDAR dans Gazebo -->
+  <node name="rplidar_node" pkg="rplidar_ros" type="rplidarNode" output="screen" />  
+    
+</launch>
